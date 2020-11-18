@@ -17,14 +17,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
-
-syntax on
-let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=16
-colorscheme onedark
-
-" Airline theme
 let g:airline_theme='onedark'
+syntax on
+set background=light
+colorscheme onedark
 
 " Indentation
 set expandtab
