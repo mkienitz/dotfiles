@@ -1,8 +1,8 @@
 Host *
-	AddKeysToAgent yes
-	UseKeychain yes
-	IdentityFile ~/.ssh/id_ed25519
-
+AddKeysToAgent yes
+UseKeychain yes
+IdentityFile ~/.ssh/id_ed25519
+IdentitiesOnly yes
 
 Host hhg_webtest
 HostName 10.151.11.9
