@@ -38,7 +38,6 @@ HostName 192.168.178.12
 User pi
 Port 22
 
-Host websec
-HostName 131.159.50.210
-User team-7
-Port 7999
+Host itsec
+HostName sandkasten.sec.in.tum.de
+User team-4
