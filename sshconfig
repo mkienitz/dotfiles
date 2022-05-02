@@ -3,26 +3,6 @@ AddKeysToAgent yes
 UseKeychain yes
 IdentitiesOnly yes
 
-Host hhg_webtest
-HostName 10.151.11.9
-User root
-Port 22
-
-Host hhg_vmhost
-HostName 10.151.13.1
-User root
-Port 22
-
-Host hhg_gkk_vm
-HostName 10.151.13.15
-User root
-Port 22
-
-Host hhg_gkk
-HostName gkk.local
-User pi
-Port 22
-
 Host lxhalle
 HostName lxhalle.in.tum.de
 User kienitz
@@ -37,7 +17,3 @@ Host raspi
 HostName 192.168.178.12
 User pi
 Port 22
-
-Host itsec
-HostName sandkasten.sec.in.tum.de
-User team-4
