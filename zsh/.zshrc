@@ -10,9 +10,9 @@ function branch_name () {
         STATUS=$(git status -s | awk '{print $1}')
         if [[ $STATUS == "" ]];
         then
-            echo "$BRANCH"
+            echo " %F{7}$BRANCH%f"
         else
-            echo "%F{14}$BRANCH%f"
+            echo " %F{13}$BRANCH%f"
         fi
     fi
 }
@@ -25,7 +25,7 @@ alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la' 
 
-PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f %(?..%F{9}%? %f)$(branch_name) > %b'
+PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f%(?.. %F{9}%?%f)$(branch_name) > %b'
 
 
 
