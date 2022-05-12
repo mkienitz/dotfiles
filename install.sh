@@ -1,2 +1,9 @@
-CWD=$(pwd)
-ln -sf $CWD/sshconfig ~/.ssh/config
+stow bat
+stow karabiner
+stow kitty
+stow neofetch
+stow nvim
+stow skhd
+stow ssh
+stow yabai
+stow zsh
