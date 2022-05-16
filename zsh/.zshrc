@@ -1,5 +1,5 @@
+# Promt configuration
 setopt PROMPT_SUBST
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 function branch_name () {
     BRANCH=$(git branch 2>/dev/null | awk '{print $2}')
@@ -17,19 +17,31 @@ function branch_name () {
     fi
 }
 
+PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f%(?.. %F{9}%?%f)$(branch_name)%b '
+
+
+# Aliases
 alias vim='nvim'
-alias zshrc='vim ~/.zshrc'
-alias szsh='source ~/.zshrc'
 alias initvim='vim ~/.config/nvim/init.vim'
 alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la' 
+alias l='ls'
+alias python='python3'
 
-PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f%(?.. %F{9}%?%f)$(branch_name) > %b'
 
+# Homebrew
+PATH=/opt/homebrew/bin:$PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
-export PATH=/opt/homebrew/bin:$PATH
 
 # opam configuration
 [[ ! -r /Users/max/.opam/opam-init/init.zsh ]] || source /Users/max/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+
+# Scripts
+function edf() {
+    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
+}
+
+
