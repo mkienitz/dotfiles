@@ -30,12 +30,14 @@ alias l='ls'
 alias zz='z -'
 alias python='python3'
 
-# Zoxide
-eval "$(zoxide init zsh)"
 
 # Homebrew
 PATH=/opt/homebrew/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+# Zoxide
+eval "$(zoxide init zsh)"
 
 
 # opam configuration
