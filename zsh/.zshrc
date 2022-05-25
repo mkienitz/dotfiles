@@ -27,8 +27,11 @@ alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la' 
 alias l='ls'
+alias zz='z -'
 alias python='python3'
 
+# Zoxide
+eval "$(zoxide init zsh)"
 
 # Homebrew
 PATH=/opt/homebrew/bin:$PATH
