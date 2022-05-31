@@ -32,7 +32,7 @@ alias python='python3'
 
 
 # Homebrew
-PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/bin:/Users/max/.local/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 

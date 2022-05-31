@@ -20,6 +20,9 @@ yabai -m config window_shadow float
 
 
 # Rules
+yabai -m rule --add label="Discord on Dekstop 5" app="^Discord" space=^5
+yabai -m rule --add label="Signal on Dekstop 6" app="^Signal$" space=^6
+yabai -m rule --add label="Spotify on Dekstop 6" app="^Spotify$" space=^6
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advanced)$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
