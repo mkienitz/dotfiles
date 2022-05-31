@@ -28,6 +28,7 @@ alias ll='exa -l'
 alias la='exa -la' 
 alias l='ls'
 alias zz='z -'
+alias tree='exa -T'
 alias python='python3'
 
 
