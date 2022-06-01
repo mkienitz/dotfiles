@@ -11,11 +11,11 @@ yabai -m config active_window_border_color 0xffb8bb26
 
 # Layout
 yabai -m config layout bsp
-yabai -m config top_padding    15
-yabai -m config bottom_padding 15
-yabai -m config left_padding   15
-yabai -m config right_padding  15
-yabai -m config window_gap     15
+# yabai -m config top_padding    15
+# yabai -m config bottom_padding 15
+# yabai -m config left_padding   15
+# yabai -m config right_padding  15
+# yabai -m config window_gap     15
 yabai -m config window_shadow float
 
 
