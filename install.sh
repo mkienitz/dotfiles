@@ -7,4 +7,4 @@ stow skhd
 stow ssh
 stow yabai
 stow zsh
-
+stow tmux
