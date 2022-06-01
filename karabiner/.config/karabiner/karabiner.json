@@ -16,27 +16,6 @@
                 },
                 "rules": [
                     {
-                        "description": "RCmd to Hyper",
-                        "manipulators": [
-                            {
-                                "from": {
-                                        "key_code": "right_command"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Caps lock to LCTRL when held, Escape when tapped",
                         "manipulators": [
                             {
@@ -51,6 +30,32 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Enter to Hyper when held",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -187,6 +192,7 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
