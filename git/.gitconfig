@@ -1,0 +1,7 @@
+[user]
+	name = Maximilian Kienitz
+	email = max@kienitz.dev
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main
