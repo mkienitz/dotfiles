@@ -33,13 +33,15 @@ alias l='ls'
 alias zz='z -'
 alias tree='exa -T'
 alias python='python3'
-alias emacs='emacsclient'
 
 
 # Homebrew
-PATH=/opt/homebrew/bin:/Users/max/.local/bin:$PATH
-PATH=~/.emacs.d/bin:$PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
+PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/opt/llvm/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/.emacs.d/bin:$PATH
+PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 # Zoxide
@@ -52,7 +54,9 @@ eval "$(zoxide init zsh)"
 
 # Scripts
 function edf() {
-    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o emacsclient
+    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o emacs
 }
 
 
+
+# [ -f "/Users/max/.ghcup/env" ] && source "/Users/max/.ghcup/env" # ghcup-env
