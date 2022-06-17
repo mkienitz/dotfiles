@@ -33,6 +33,7 @@ alias l='ls'
 alias zz='z -'
 alias tree='exa -T'
 alias python='python3'
+alias emacs='emacsclient'
 
 
 # Homebrew
@@ -51,7 +52,7 @@ eval "$(zoxide init zsh)"
 
 # Scripts
 function edf() {
-    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
+    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o emacsclient
 }
 
 
