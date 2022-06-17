@@ -1,3 +1,6 @@
+# Enable shell completion
+autoload -Uz compinit && compinit
+
 # Promt configuration
 setopt PROMPT_SUBST
 
@@ -34,6 +37,7 @@ alias python='python3'
 
 # Homebrew
 PATH=/opt/homebrew/bin:/Users/max/.local/bin:$PATH
+PATH=~/.emacs.d/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
