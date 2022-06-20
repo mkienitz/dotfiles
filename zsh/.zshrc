@@ -25,7 +25,6 @@ PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f%(?.. %F{9}%?%f)$(branch_name)
 
 # Aliases
 alias vim='nvim'
-alias initvim='vim ~/.config/nvim/init.vim'
 alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la' 
@@ -33,14 +32,17 @@ alias l='ls'
 alias zz='z -'
 alias tree='exa -T'
 alias python='python3'
+alias em='emacsclient -u -c -n'
 
 
 # Homebrew
 PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/sbin:$PATH
 PATH=/opt/homebrew/opt/llvm/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.emacs.d/bin:$PATH
 PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
+export PATH
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
@@ -54,7 +56,7 @@ eval "$(zoxide init zsh)"
 
 # Scripts
 function edf() {
-    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o emacs
+    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
 }
 
 
