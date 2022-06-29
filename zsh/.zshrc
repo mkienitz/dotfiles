@@ -39,6 +39,7 @@ alias em='emacsclient -u -c -n'
 PATH=/opt/homebrew/bin:$PATH
 PATH=/opt/homebrew/sbin:$PATH
 PATH=/opt/homebrew/opt/llvm/bin:$PATH
+PATH=/opt/homebrew/opt/curl/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.emacs.d/bin:$PATH
 PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
