@@ -1,6 +1,3 @@
-# Enable shell completion
-autoload -Uz compinit && compinit
-
 # Promt configuration
 setopt PROMPT_SUBST
 
@@ -28,6 +25,7 @@ alias vim='nvim'
 alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la' 
+alias llt='exa --long --tree'
 alias l='ls'
 alias zz='z -'
 alias tree='exa -T'
@@ -63,3 +61,10 @@ function edf() {
 
 
 # [ -f "/Users/max/.ghcup/env" ] && source "/Users/max/.ghcup/env" # ghcup-env
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle :compinstall filename '/Users/max/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
