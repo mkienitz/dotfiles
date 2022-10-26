@@ -41,6 +41,7 @@ PATH=/opt/homebrew/opt/curl/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.emacs.d/bin:$PATH
 PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
+PATH=$HOME/.config/scripts:$PATH
 export PATH
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
