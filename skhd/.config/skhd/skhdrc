@@ -18,7 +18,7 @@ hyper - f : yabai -m window --resize right:50:0; yabai -m window --resize left:5
 hyper - return : yabai -m window --toggle zoom-fullscreen
 
 # Applications
-hyper - 0x2A : open -na /Applications/Alacritty.app/Contents/MacOS/alacritty 
+hyper - 0x32 : open -na /Applications/Alacritty.app/Contents/MacOS/alacritty 
 
 # Rotation and balance
 hyper - t : yabai -m space --mirror y-axis
