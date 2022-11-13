@@ -30,6 +30,7 @@ alias l='ls'
 alias zz='z -'
 alias tree='exa -T'
 alias python='python3'
+alias ghci='TERM=dumb ghci'
 alias em='emacsclient -u -c -n'
 
 
@@ -43,6 +44,8 @@ PATH=$HOME/.emacs.d/bin:$PATH
 PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
 PATH=$HOME/.config/scripts:$PATH
 export PATH
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
