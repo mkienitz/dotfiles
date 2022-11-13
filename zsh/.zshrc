@@ -31,6 +31,7 @@ alias zz='z -'
 alias tree='exa -T'
 alias python='python3'
 alias ghci='TERM=dumb ghci'
+alias lg='lazygit'
 alias em='emacsclient -u -c -n'
 
 
