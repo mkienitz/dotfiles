@@ -47,6 +47,7 @@ PATH=$HOME/.config/scripts:$PATH
 export PATH
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export XDG_CONFIG_HOME="$HOME/.config"
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
