@@ -2,12 +2,12 @@
 setopt PROMPT_SUBST
 
 function branch_name () {
-    BRANCH=$(git branch 2>/dev/null | awk '{print $2}')
+    BRANCH=$(git branch 2>/dev/null | awk '{print $2}' | xargs)
     if [[ $BRANCH == "" ]];
     then
         :
     else
-        STATUS=$(git status -s | awk '{print $1}')
+        STATUS=$(git status -s | awk '{print $1}' | xargs)
         if [[ $STATUS == "" ]];
         then
             echo " %F{7}$BRANCH%f"
