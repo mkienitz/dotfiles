@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import sys
+import requests
+
+def main(track: str) -> None:
+    print(track)
+    answer = requests.get(url=f'https://scannables.scdn.co/uri/plain/png/FFFFFF/black/640/spotify:track:{track}')
+    with open(f'{track}.png', 'wb') as f:
+        f.write(answer.content)
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print('Error! Exactly one argument (Spotify URI) required!')
+        exit(-1)
+    track = sys.argv[1].split('/')[4].split('?')[0]
+    main(track)
