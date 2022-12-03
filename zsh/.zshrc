@@ -62,9 +62,18 @@ eval "$(zoxide init zsh)"
 # Opam
 [[ ! -r /Users/max/.opam/opam-init/init.zsh ]] || source /Users/max/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+# Zap
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+
+
+# Completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle :compinstall filename '/Users/max/.zshrc'
 autoload -Uz compinit
 compinit
+
