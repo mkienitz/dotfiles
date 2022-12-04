@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SESSION_NAME="max"
-SESSION_EXISTS=$(tmux list-sessions 2>&1 | grep $SESSION_NAME)
-if [ "$SESSION_EXISTS" = "" ]
+
+if ! tmux has-session -t $SESSION_NAME 2>/dev/null
 then
     tmux new -d -s $SESSION_NAME
     tmux rename-window -t $SESSION_NAME:0 'Main'
