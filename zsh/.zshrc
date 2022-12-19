@@ -35,7 +35,8 @@ alias l='ls'
 alias zz='z -'
 alias tree='exa -T'
 alias python='python3'
-alias ghci='TERM=dumb ghci'
+alias sz='source ~/.zshrc'
+# alias ghci='TERM=dumb ghci'
 alias lg='lazygit'
 alias em='emacsclient -u -c -n'
 
@@ -66,7 +67,7 @@ eval "$(zoxide init zsh)"
 # Zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
-plug "zsh-users/zsh-syntax-highlighting"
+# plug "zsh-users/zsh-syntax-highlighting"
 
 
 # Completion
