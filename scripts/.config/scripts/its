@@ -6,9 +6,9 @@ then
     tmux new -d -s $SESSION_NAME
     tmux rename-window -t $SESSION_NAME:0 'Main'
     tmux new-window -t $SESSION:1 -n 'Code'
-    tmux new-window -t $SESSION:2 -n 'Terminals'
-    tmux split-window -t $SESSION:2 -h
-    tmux new-window -t $SESSION:3 -n 'Background'
+    # tmux new-window -t $SESSION:2 -n 'Terminals'
+    # tmux split-window -t $SESSION:2 -h
+    # tmux new-window -t $SESSION:3 -n 'Background'
 fi
 
 tmux a -t $SESSION_NAME:0
