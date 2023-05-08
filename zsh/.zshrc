@@ -39,6 +39,7 @@ alias sz='source ~/.zshrc'
 # alias ghci='TERM=dumb ghci'
 alias lg='lazygit'
 alias em='emacsclient -u -c -n'
+alias weather='curl wttr.in/Munich'
 
 
 # Environment Variables
