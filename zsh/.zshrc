@@ -22,6 +22,7 @@ function branch_name () {
     fi
 }
 
+export EDITOR=nvim
 PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f%(?.. %F{9}%?%f)$(branch_name)%b '
 
 
