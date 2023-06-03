@@ -27,4 +27,4 @@ gui:
 disableStartupPopups: true
 notARepository: "skip"
 os:
-  editCommand: "nvim"
+  editPreset: "nvim"
