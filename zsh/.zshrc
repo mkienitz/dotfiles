@@ -66,4 +66,5 @@ plug "zsh-users/zsh-syntax-highlighting"
 eval "$(direnv hook zsh)"
 
 # Starship shell
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
