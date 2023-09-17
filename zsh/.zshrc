@@ -1,87 +1,69 @@
-# Promt configuration
-setopt PROMPT_SUBST
+bindkey -e
 
 # Scripts
 function edf() {
-    find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
+	find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
 }
 
-function branch_name () {
-    BRANCH=$(git branch 2>/dev/null | awk '{print $2}' | xargs)
-    if [[ $BRANCH == "" ]];
-    then
-        :
-    else
-        STATUS=$(git status -s | awk '{print $1}' | xargs)
-        if [[ $STATUS == "" ]];
-        then
-            echo " %F{7}$BRANCH%f"
-        else
-            echo " %F{13}$BRANCH%f"
-        fi
-    fi
-}
-
+# Goated
 export EDITOR=nvim
-PROMPT='%B%F{11}%n%f%F{10}@%f%F{202}%m%f %F{4}%~%f%(?.. %F{9}%?%f)$(branch_name)%b '
-
 
 # Aliases
-alias vim='nvim'
-alias ls='exa'
-alias ll='exa -l'
-alias la='exa -la' 
-alias llt='exa --long --tree'
+alias ghci='TERM=dumb ghci'
 alias l='ls'
-alias zz='z -'
-alias tree='exa -T'
-alias python='python3'
-alias sz='source ~/.zshrc'
-# alias ghci='TERM=dumb ghci'
+alias la='exa -la'
 alias lg='lazygit'
-alias em='emacsclient -u -c -n'
+alias ll='exa -l'
+alias llt='exa --long --tree'
+alias ls='exa'
+alias sz='source ~/.zshrc'
+alias tree='exa -T'
+alias vim='nvim'
 alias weather='curl wttr.in/Munich'
-
+alias zz='z -'
 
 # Environment Variables
-PATH=/opt/homebrew/bin:$PATH
-PATH=/opt/homebrew/sbin:$PATH
-PATH=/opt/homebrew/opt/llvm/bin:$PATH
-PATH=/opt/homebrew/opt/curl/bin:$PATH
-PATH=$HOME/.cabal/bin:$PATH
-PATH=$HOME/.local/bin:$PATH
-PATH=$HOME/.emacs.d/bin:$PATH
 PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
+PATH=$HOME/.cabal/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/.config/scripts:$PATH
-PATH="$HOME/.cargo/bin:$PATH"
+PATH=$HOME/.emacs.d/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
+PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/opt/curl/bin:$PATH
+PATH=/opt/homebrew/opt/libpq/bin:$PATH
+PATH=/opt/homebrew/opt/llvm/bin:$PATH
+PATH=/opt/homebrew/sbin:$PATH
 export PATH
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib -L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export XDG_CONFIG_HOME="$HOME/.config"
+export ZSH_DISABLE_COMPFIX=true
 
 # Zoxide
 eval "$(zoxide init zsh)"
 
-
 # Opam
-[[ ! -r /Users/max/.opam/opam-init/init.zsh ]] || source /Users/max/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /Users/max/.opam/opam-init/init.zsh ]] || source /Users/max/.opam/opam-init/init.zsh >/dev/null 2>/dev/null
+
+# Nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Completion
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+	autoload -Uz compinit
+	compinit -u
+fi
 
 # Zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 
+# Direnv
+eval "$(direnv hook zsh)"
 
-# Completion
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle :compinstall filename '/Users/max/.zshrc'
-autoload -Uz compinit
-compinit
-
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Starship shell
+eval "$(starship init zsh)"
