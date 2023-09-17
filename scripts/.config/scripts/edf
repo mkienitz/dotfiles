@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
+

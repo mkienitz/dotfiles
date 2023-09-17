@@ -1,10 +1,5 @@
 bindkey -e
 
-# Scripts
-function edf() {
-	find ~/.dotfiles ! -iwholename '*.git*' -type f | fzf | xargs -o nvim
-}
-
 # Goated
 export EDITOR=nvim
 
