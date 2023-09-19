@@ -3,6 +3,10 @@ bindkey -e
 # Goated
 export EDITOR=nvim
 
+export HISTSIZE=100000
+export HISTFILE=~/.zsh_history
+export SAVEHIST=100000
+
 # Aliases
 alias ghci='TERM=dumb ghci'
 alias l='ls'
@@ -24,6 +28,7 @@ PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/.config/scripts:$PATH
 PATH=$HOME/.emacs.d/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/.bun/bin:$PATH
 PATH=/opt/homebrew/bin:$PATH
 PATH=/opt/homebrew/opt/curl/bin:$PATH
 PATH=/opt/homebrew/opt/libpq/bin:$PATH
@@ -63,3 +68,7 @@ eval "$(direnv hook zsh)"
 # Starship shell
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/max/.bun/_bun" ] && source "/Users/max/.bun/_bun"
+
