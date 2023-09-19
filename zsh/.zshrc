@@ -35,6 +35,7 @@ PATH=/opt/homebrew/opt/libpq/bin:$PATH
 PATH=/opt/homebrew/opt/llvm/bin:$PATH
 PATH=/opt/homebrew/sbin:$PATH
 export PATH
+typeset -U PATH path
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib -L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -62,6 +63,7 @@ fi
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 
+
 # Direnv
 eval "$(direnv hook zsh)"
 
@@ -71,4 +73,9 @@ eval "$(starship init zsh)"
 
 # bun completions
 [ -s "/Users/max/.bun/_bun" ] && source "/Users/max/.bun/_bun"
+
+# SSH-agent
+export SSH_ASKPASS=ssh-askpass
+export DISPLAY=":0"
+eval $(ssh-agent -s)
 
