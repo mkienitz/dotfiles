@@ -22,20 +22,6 @@ alias weather='curl wttr.in/Munich'
 alias zz='z -'
 
 # Environment Variables
-PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
-PATH=$HOME/.cabal/bin:$PATH
-PATH=$HOME/.cargo/bin:$PATH
-PATH=$HOME/.config/scripts:$PATH
-PATH=$HOME/.emacs.d/bin:$PATH
-PATH=$HOME/.local/bin:$PATH
-PATH=$HOME/.bun/bin:$PATH
-PATH=/opt/homebrew/bin:$PATH
-PATH=/opt/homebrew/opt/curl/bin:$PATH
-PATH=/opt/homebrew/opt/libpq/bin:$PATH
-PATH=/opt/homebrew/opt/llvm/bin:$PATH
-PATH=/opt/homebrew/sbin:$PATH
-export PATH
-typeset -U PATH path
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib -L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -46,10 +32,6 @@ eval "$(zoxide init zsh)"
 
 # Opam
 [[ ! -r /Users/max/.opam/opam-init/init.zsh ]] || source /Users/max/.opam/opam-init/init.zsh >/dev/null 2>/dev/null
-
-# Nvm
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Completion
 if type brew &>/dev/null; then
@@ -73,9 +55,3 @@ eval "$(starship init zsh)"
 
 # bun completions
 [ -s "/Users/max/.bun/_bun" ] && source "/Users/max/.bun/_bun"
-
-# SSH-agent
-export SSH_ASKPASS=ssh-askpass
-export DISPLAY=":0"
-eval $(ssh-agent -s)
-
