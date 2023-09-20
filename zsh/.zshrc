@@ -1,4 +1,7 @@
+# Keybinding
 bindkey -e
+bindkey -r "^P"
+bindkey -r "^N"
 
 # Goated
 export EDITOR=nvim
